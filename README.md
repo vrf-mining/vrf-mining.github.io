@@ -1,3 +1,3 @@
 # vrf-mining.github.io
 
-Website repo of "VRF-based Mining".
+"VRF-based Mining: Simple Non-Outsourceable Cryptocurrency Mining" website.
