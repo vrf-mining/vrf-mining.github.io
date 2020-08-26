@@ -55,9 +55,44 @@
   <main>
     <article>
       <h2 id="getting-started">Motivation</h2>
+      <p>
+        Mining pools centralisation, which can lead to censorship and 51% attacks.
+      </p>
+      <br />
+      <figure>
+        <img src="/assets/pool-distribution.png"
+          loading="lazy" alt="Pool Distribution" width="600" height="400" />
+        <figcaption>
+          3-months Pool Distribution, 
+          taken from <a href="https://btc.com/stats/pool?pool_mode=month3">https://btc.com/stats/pool?pool_mode=month3</a>, accessed on 2020-08-27.
+        </figcaption>
+      </figure>
       <h2 id="verifiable-random-functions">Verifiable random functions</h2>
+      <p>
+      Verifiable Random Function (VRF) is a public-key version of cryptographic hash function, and requires <strong>a secret key</strong> to <em>Hash</em> and <em>Prove</em>, <strong>the correspoing public key and proof</strong> to <em>Verify</em>.
+      </p>
+      <br />
+      <p>
+      VRF should satisfy the following properties:
+        <li>Uniqueness</li>
+        <li>Collision Resistance</li>
+        <li>Pseudorandomness</li>
+      </p>
       <h2 id="vrf-based-mining">VRF-based mining</h2>
+      <figure>
+        <img src="/assets/vrf-mining.png"
+          loading="lazy" alt="VRF-based mining" width="600" height="400" />
+      </figure>
       <h2 id="non-outsourceability-analysis">Non-outsourceability analysis</h2>
+      <p>
+        Types of non-outsourceability:
+        <li><em>Weak non-outsourcability</em>: If the pool operator outsources the mining process, miners can always steal the reward of mining. <em>Weak non-outsourceability</em> defines the punishment of outsourcing.</li>
+        <li><em>Strong non-outsourcability</em>: In addition to <em>weak non-outsourcability</em>, the pool operator cannot link the stolen mining reward with the miner who steals it. <em>Strong non-outsourceability</em> covers both the punishment and the anonymity of the stealer.</li>
+      </p>
+      <br />
+      <p>
+      VRF-based mining satisfies <em>punish-mining-reward</em> (miners can still steal reward), but not <em>stealing-unlinkability</em> (stealing is anonymous): a pool operator can outsource different block templates with different secret keys to each miner, and can identify the stealer by the secret key in the transaction stealing the reward.
+      </p>
       <h2 id="related-works">Related works</h2>
     </article>
   </main>
