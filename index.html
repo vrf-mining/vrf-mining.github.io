@@ -48,7 +48,11 @@
       <li><a href="#verifiable-random-functions">Verifiable random functions</a></li>
       <li><a href="#vrf-based-mining">VRF-based mining</a></li>
       <li><a href="#non-outsourceability-analysis">Non-outsourceability analysis</a></li>
-      <li><a href="#related-works">Related works</a></li>
+      <li><a href="#related-work">Related work</a></li>
+        <ol>
+          <li><a href="#non-outsourceable">Other non-outsourceable mining protocols</a></li>
+          <li><a href="#decentralised-mining-protocols">Decentralised mining protocols</a></li>
+        </ol>
     </ol>
   </nav>
 
@@ -64,7 +68,7 @@
           loading="lazy" alt="Pool Distribution" width="600" height="400" />
         <figcaption>
           3-months Pool Distribution, 
-          taken from <a href="https://btc.com/stats/pool?pool_mode=month3">https://btc.com/stats/pool?pool_mode=month3</a>, accessed on 2020-08-27.
+          taken from <a href="https://btc.com/stats/pool?pool_mode=month3">https://btc.com/stats/pool?pool_mode=month3</a>. Accessed 27 Aug. 2020.
         </figcaption>
       </figure>
       <h2 id="verifiable-random-functions">Verifiable random functions</h2>
@@ -93,7 +97,102 @@
       <p>
       VRF-based mining satisfies <em>punish-mining-reward</em> (miners can still steal reward), but not <em>stealing-unlinkability</em> (stealing is anonymous): a pool operator can outsource different block templates with different secret keys to each miner, and can identify the stealer by the secret key in the transaction stealing the reward.
       </p>
-      <h2 id="related-works">Related works</h2>
+      <h2 id="related-work">Related work</h2>
+      <h3 id="non-outsourceable">Other non-outsourceable mining protocols</h3>
+      Comparison between mining protocols. NSP is short for Non-outsourceable scratch-off puzzle<sup><a href="#fn1" id="ref1">1</a></sup>.
+      <table>
+        <thead>
+          <tr>
+            <th> </th>
+            <th>VRF-based mining</th>
+            <th>NSP-1</th>
+            <th>NSP-2</th>
+            <th>2P-PoW<sup><a href="#fn2" id="ref2">2</a></sup></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Punish-mining-reward</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>Stealing-unlinkability</td>
+            <td>✗$^\dagger$</td>
+            <td>✗</td>
+            <td>✓</td>
+            <td>✗</td>
+          </tr>
+          <tr>
+            <td>No partial outsourcing</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✗</td>
+          </tr>
+          <tr>
+            <td>Support randomised signatures</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✗</td>
+          </tr>
+          <tr>
+            <td>No complex cryptography</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✗</td>
+            <td>✓</td>
+          </tr>
+        </tbody>
+      </table>
+      $\dagger$ The pool operator should take non-negligible effort to deanonymise stealing behaviours.
+      
+      <h3 id="decentralised-mining-protocols">Decentralised mining protocols</h3>
+      Comparison with decentralised mining pools.
+      <table>
+        <thead>
+          <tr>
+            <th> </th>
+            <th>VRF-based mining</th>
+            <th>P2Pool</th>
+            <th>SmartPool</th>
+            <th>BetterHash<sup></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Complexity</td>
+            <td>-</td>
+            <td>Blockchain</td>
+            <td>Smart contract</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Decentralisation</td>
+            <td>Mining</td>
+            <td>Mining</td>
+            <td>Mining</td>
+            <td>Select txs</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <div class="footnotes">
+        <p id="fn1">
+          1. Miller, A., Kosba, A., Katz, J., Shi, E.: Nonoutsourceable scratch-off puzzles to discourage bitcoin mining coalitions. In: Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security. pp. 680–691. ACM (2015).
+          <a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a>
+        </p>
+        <p id="fn2">
+          2.  “How to disincentivize large bitcoin mining pools” hackingdistributed.com, Ittay Eyal and Emin Gün Sirer,
+          <a
+            href="https://hackingdistributed.com/2014/06/18/how-to-disincentivize-large-bitcoin-mining-pools/">https://hackingdistributed.com/2014/06/18/how-to-disincentivize-large-bitcoin-mining-pools/</a>.
+          Accessed 27 Aug. 2020.
+          <a href="#ref2" title="Jump back to footnote 2 in the text.">↩</a>
+        </p>
+      </div>
     </article>
   </main>
 
